@@ -3,12 +3,19 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
+import {Domain} from './domain'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
+
+
+const domain = new Domain()
+
+domain.get('getFavoritesTweetsUseCase').execute({username: 'carlos', count: 12}).then(console.log)
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://www.snowpack.dev/#hot-module-replacement
